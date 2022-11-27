@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wordish.Name</title>
+
+    <link rel="stylesheet" href="game-style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="title">
+            <h1>Wordish.Name</h1>
+            <h3>Generate a name for everything </h3>
+        </div>
+        <div class="input">
+            <form action="javascript:onFormSubmit(wordsInput.value)">
+                <label for="wordsInput">Enter a few related words:</label>
+                <input type="text" id="wordsInput" name="wordsInput" placeholder="messages, conversation, people, etc" required><br><br>
+                <input type="submit" value="Generate">
+            </form >
+        </div>
+        <div class="results" id="results">
+
+        </div>
+    </div>
+    <p>Hello World!</p>
+    <script src="scripts/apis/google-ngram.js"></script>
+    <script src="scripts/apis/datamuse.js"></script>
+    <script src="scripts/input.js"></script>
+    <script src="scripts/generator.js"></script>
+</body>
+</html>
