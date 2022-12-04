@@ -11,7 +11,6 @@ function getAverageSearches(word) {
             fetch("https://api.allorigins.win/get?url=" + "https://books.google.com/ngrams/json?content=" + word + "&year_start=1990&year_end=2019&corpus=26&smoothing=3").then(response => {
                 return response.json()
             }).then(data => {
-                console.log("GOT DATA");
                 let values;
                 try {
                     values = JSON.parse(data["contents"])[0]["timeseries"];
