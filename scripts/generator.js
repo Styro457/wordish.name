@@ -1,5 +1,6 @@
 const resultsDiv = document.getElementById("results");
 const allWordsText = document.getElementById("allWordsText");
+const resultsFound = document.getElementById("resultsFound");
 
 let globalWords = [];
 
@@ -34,7 +35,11 @@ function addWord(word) {
 
 function checkWords(i) {
     addResult(globalWords[i]);
-    setTimeout(checkWords.bind(null, i + 1), 50);
+    resultsFound.textContent = Number(resultsFound.textContent) + 1 + "";
+    if(i < globalWords.length-1)
+        setTimeout(checkWords.bind(null, i + 1), 50);
+    else
+        document.getElementById("generateButton").disabled = false;
 }
 
 async function addResultsForKeyword(keywordsRaw) {
@@ -45,7 +50,7 @@ async function addResultsForKeyword(keywordsRaw) {
             keywords[i],
             keywords.slice().splice(i, 1),
             undefined, undefined,
-            300, "f:0.0", 4).then(words => {
+            300, "f:0.00", 4).then(words => {
             globalWords = globalWords.concat(words);
         });
     }
@@ -54,7 +59,7 @@ async function addResultsForKeyword(keywordsRaw) {
             keywords[i],
             null,
             undefined, undefined,
-            300, "f:0.0", 4).then(words => {
+            300, "f:0.00", 4).then(words => {
             globalWords = globalWords.concat(words);
         });
     }
@@ -68,6 +73,8 @@ async function addResultsForKeyword(keywordsRaw) {
         return a.word.length - b.word.length;
     });
     console.log(globalWords);
+    document.getElementById("resultsFoundText").textContent = "Words found: ";
+    resultsFound.textContent = 0 + "";
     checkWords(0);
 }
 
