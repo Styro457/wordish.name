@@ -5,6 +5,6 @@ function onFormSubmit(word, button) {
     const createResults = async () => {
         await addResultsForKeyword(word);
     }
-    createResults().then(r => console.log("DONE"));
+    createResults().then(r => {});
     button.disabled = true;
 }
