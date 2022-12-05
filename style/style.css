@@ -23,7 +23,6 @@
 .right {
     float: left;
     width: 25%;
-    font-size: xx-small;
     white-space: pre-line;
 }
 
@@ -126,6 +125,7 @@ input[type=submit]:disabled {
     overflow-y: auto;
     background: black;
     color: green;
+    font-size: x-small;
     scrollbar-color: green black;
     scrollbar-width: thin;
 }
