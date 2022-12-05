@@ -136,3 +136,18 @@ input[type=submit]:disabled {
     scrollbar-width: thin;
 }
 
+.allWords::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
+}
+
+.allWords::-webkit-scrollbar-track-piece  {
+    background-color: black;
+}
+
+.allWords::-webkit-scrollbar-thumb:vertical {
+    height: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: green;
+}
