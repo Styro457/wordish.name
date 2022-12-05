@@ -127,5 +127,5 @@ input[type=submit]:disabled {
 .allWords {
     width: 100%;
     height: 150px;
-    overflow: scroll;
+    overflow-y: auto;
 }
