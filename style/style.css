@@ -120,12 +120,14 @@ input[type=submit]:disabled {
 }
 
 .allWords {
-    width: 100%;
+    width: 95%;
     height: 95%;
     overflow-y: auto;
     background: black;
     color: green;
     font-size: x-small;
+    padding-left: 10px;
+    margin: auto;
     scrollbar-color: green black;
     scrollbar-width: thin;
 }
