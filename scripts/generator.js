@@ -14,6 +14,10 @@ function addResult(word) {
     text.className = "resultWord";
     text.textContent = word.word;
 
+    let frequency = document.createElement("p");
+    frequency.className = "resultFrequency";
+    frequency.textContent = "frequency: " + word.frequency.substring(2);
+
     let description = document.createElement("p");
     description.className = "resultDescription";
     let definitions = "";
@@ -24,6 +28,7 @@ function addResult(word) {
     }
     description.textContent = definitions;
     div.appendChild(text);
+    div.appendChild(frequency);
     div.appendChild(description);
 
     resultsDiv.appendChild(div);
