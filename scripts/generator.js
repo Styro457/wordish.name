@@ -11,7 +11,7 @@ function addResult(word) {
     div.className = "result";
 
     let text = document.createElement("p");
-    text.className = "resultText";
+    text.className = "resultWord";
     text.textContent = word.word;
 
     let description = document.createElement("p");
