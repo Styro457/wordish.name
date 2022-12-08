@@ -38,7 +38,7 @@ function addResult(word) {
         "</svg>";
 
     div.appendChild(text);
-    div.appendChild(audio);
+    text.appendChild(audio);
     div.appendChild(frequency);
     div.appendChild(description);
 

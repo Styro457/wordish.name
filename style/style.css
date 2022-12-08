@@ -119,6 +119,17 @@ input[type=submit]:disabled {
     opacity: 90%;
 }
 
+.resultAudio {
+    background-color: transparent;
+    border: none;
+    margin-left: 5px;
+}
+
+.resultAudio:hover {
+    color: gray;
+    cursor: pointer;
+}
+
 .allWords {
     width: 95%;
     height: 95%;
