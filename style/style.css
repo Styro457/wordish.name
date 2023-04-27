@@ -1,168 +1,125 @@
+body {
+    background-size: cover;
+    background: url("../assets/background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
-.background {
-    height: 100%;
+.machineHolder {
     width: 100%;
-    font-family:Verdana,sans-serif;
+    height: 100%;
+    margin-top: 5%;
 }
 
-.left {
-    float: left;
-    width: 25%;
-    white-space: pre-line;
+.title {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: -10%;
 }
 
-.middle {
-    float: left;
-    width: 50%;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    align-self: center;
+.machine {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: min(900px, 100vw);
+    height: auto;
+    margin-bottom: -10%;
 }
 
-.right {
-    float: left;
-    width: 25%;
-    white-space: pre-line;
-}
-
-.background:after {
-    content: "";
-    display: table;
-    clear: both;
+.machineBody {
+    width: 100%;
+    height: auto;
 }
 
 form {
-
-}
-
-.input {
-
-}
-
-input[type=text] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+}
+
+
+.machineInput {
+    position: absolute;
+    top: 20.6%;
+    left: 12%;
+    width: 50.8%;
+    height: 4.8%;
+}
+
+input.PixelatedInput[type=text] {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    font-family: "pixelatedFont", "sans-serif";
+    font-size: 27px;
+    margin-top: 5px;
+    font-weight:normal;
+    font-style:normal;
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+input.PixelatedInput[type=text]:focus {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: none;
+    border: none;
+    outline: none;
+    caret-shape: underscore;
+    caret-color: transparent;
 }
 
 .generateButtonBackground {
-    background-color: #626669;
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    padding: 2px;
-    border-radius: 20px
+    position: absolute;
+    right:6%;
+    bottom:13.5%;
+    width: 20%;
+    height: auto;
 }
 
-input[type=submit] {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    display: block;
-    align-self: center;
-    background: #d32517;
-    border-radius: 20px;
-    border: outset 10px #d32517;
-    font-size: 120%;
-    font-weight: bold;
-    color: white;
-    box-shadow: inset 0 0 0 0 lightgreen;
-    transition: transform .10s linear;
-    will-change: transform;
-}
-
-input[type=submit]:hover:enabled {
-    -webkit-transform: scaleX(0.95) scaleY(0.9);
-    cursor: pointer;
-}
-
-input[type=submit]:disabled {
-    -webkit-transform: scaleX(0.85) scaleY(0.8);
-    transition: transform .25s linear;
-    border-color: #d32517;
-}
-
-.results {
-    font-size: small;
-}
-
-.result {
-    border: solid 1px black;
-    width: 300px;
-    margin: 10px auto auto;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    white-space: pre-line;
-    font-family: Palatino, serif;
-}
-
-.resultWord {
-    font-weight: bold;
-    font-size: x-large;
-    font-family: Palatino, serif;
-    margin-bottom: 0;
-}
-
-.resultFrequency {
-    margin-top: 0;
-    margin-bottom: 15px;
-    padding-left: 5px;
-    font-size: 13px;
-    opacity: 40%;
-}
-
-.resultDescription {
-    padding-left: 5px;
-    opacity: 90%;
-}
-
-.resultAudio {
-    background-color: transparent;
+.generateButton {
+    position: absolute;
+    background: url("../assets/button.png") no-repeat;
+    width: 90px;
+    height: 90px;
+    right: 40%;
+    bottom: 14%;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
     border: none;
-    margin-left: 5px;
+
 }
 
-.resultAudio:hover {
-    color: gray;
+.generateButton:hover {
+    filter: brightness(110%);
+    transform: scale(1.05, 1.05);
+    cursor: pointer;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.generateButton:active {
+    filter: brightness(90%);
+    transform: scale(0.95, 0.95);
     cursor: pointer;
 }
 
-.allWords {
-    width: 95%;
-    height: 95%;
-    overflow-y: auto;
-    background: black;
-    color: green;
-    font-size: x-small;
-    padding-left: 10px;
-    margin: auto;
-    scrollbar-color: green black;
-    scrollbar-width: thin;
+.generateButton:disabled {
+
+}
+.unselectable {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
-.allWords::-webkit-scrollbar {
-    width: 8px;
-    height: 15px;
-}
-
-.allWords::-webkit-scrollbar-track-piece  {
-    background-color: black;
-}
-
-.allWords::-webkit-scrollbar-thumb:vertical {
-    height: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: green;
-}
-
-.screen {
-    width: 250px;
-    height: 250px;
-    background-color: gray;
-    padding: 0 20px 30px;
-    margin: 100px 100px;
+@font-face {
+    font-family: pixelatedFont;
+    src: url('../assets/upheavtt.ttf') format('truetype');
 }

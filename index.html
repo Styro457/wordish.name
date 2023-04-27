@@ -5,46 +5,36 @@
     <title>Wordish.Name</title>
 
     <link rel="stylesheet" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-    <div class="background">
-        <div class="left">
-            <div class="screen" style="margin-top: 800px">
-                <div class="allWords">
-                    <p></p>
+    <div class="machineHolder">
+        <img class="title unselectable" src="assets/title.png" width="1334" height="173" ondragstart="return false;" alt="Wordish.Name">
+        <div class="machine">
+            <img class="machineBody unselectable" src="assets/machineBody.png" width="1157" height="984" ondragstart="return false;" alt="Machine">
+            <form class="machineForm" action="javascript:onFormSubmit(wordsInput.value, generateButton)">
+                <div class="machineInput">
+                 <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
+                        onfocus="startCaret(this);"
+                        onfocusout="stopCaret(this);"
+                        oninput="caretInput(this);"
+                        ondragover="stopCaret(this)"
+                        ondragend="startCaret(this)"
+                 >
                 </div>
-            </div>
-        </div>
-        <div class="middle">
-            <div class="title">
-                <h1>Wordish.Name</h1>
-                <h3>Generate a name for everything </h3>
-            </div>
-            <div class="input">
-                <form action="javascript:onFormSubmit(wordsInput.value, generateButton)">
-                    <label for="wordsInput">Enter a few related words:</label>
-                    <input type="text" id="wordsInput" name="wordsInput" placeholder="messages, conversation, people, etc" required>
-                    <div class="generateButtonBackground">
-                        <input type="submit" name="generateButton" id="generateButton" value="Generate">
-                    </div>
-                </form >
-            </div>
-            <div class="resultsFoundDiv">
-                <p class="resultsFoundText" id="resultsFoundText"></p><p class="resultsFound" id="resultsFound"></p>
-            </div>
-            <div class="results" id="results">
-            </div>
-        </div>
-        <div class="right">
-            <!-- <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/> </svg> -->
-            <div class="screen">
-                <div class="allWords" id="allWords">
-                    <p id="allWordsText"></p>
+                <div class="generateButtonBackground">
+                    <img src="assets/buttonBase.png" width="120" height="120" alt="">
+                    <input type="submit" class="generateButton" name="generateButton" id="generateButton" value="">
                 </div>
-                <p>Words checked : 382</p>
-            </div>
+            </form >
         </div>
     </div>
+
+    <p id="allWordsText"></p>
+    <p id="resultsFound"></p>
+    <div id="results"></div>
+
+    <script src="scripts/display/customCaret.js"></script>
     <script src="scripts/apis/datamuse.js"></script>
     <script src="scripts/input.js"></script>
     <script src="scripts/generator.js"></script>
