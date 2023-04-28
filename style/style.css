@@ -35,7 +35,10 @@ body {
 }
 
 form {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    top: 0;
 }
 
 
@@ -77,18 +80,22 @@ input.PixelatedInput[type=text]:focus {
 .generateButtonBackground {
     position: absolute;
     background: url("../assets/buttonBase.png") no-repeat;
-    right:6%;
+    background-origin: content-box;
+    background-size: 100%;
+    right:12.7%;
     bottom:13.5%;
-    width: 180px;
-    height: 125px;
+    width: 13.3%;
+    height: 16.2%;
 }
 
 .generateButton {
     position: absolute;
     background: url("../assets/button.png") no-repeat;
-    width: 90px;
-    height: 90px;
-    right: 40%;
+    background-origin: content-box;
+    background-size: 100%;
+    width: 76%;
+    height: 74%;
+    right: 13%;
     bottom: 14%;
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
     border: none;
