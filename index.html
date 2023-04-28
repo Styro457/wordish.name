@@ -12,20 +12,26 @@
         <img class="title unselectable" src="assets/title.png" width="1334" height="173" ondragstart="return false;" alt="Wordish.Name">
         <div class="machine">
             <img class="machineBody unselectable" src="assets/machineBody.png" width="1157" height="984" ondragstart="return false;" alt="Machine">
-            <form class="machineForm" action="javascript:onFormSubmit(wordsInput.value, generateButton)">
-                <div class="machineInput">
-                 <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
-                        onfocus="startCaret(this);"
-                        onfocusout="stopCaret(this);"
-                        oninput="caretInput(this);"
-                        ondragover="stopCaret(this)"
-                        ondragend="startCaret(this)"
-                 >
+            <div class="machineUI">
+                <form class="machineForm" action="javascript:onFormSubmit(wordsInput.value, generateButton)">
+                    <div class="machineInput">
+                     <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
+                            onfocus="startCaret(this);"
+                            onfocusout="stopCaret(this);"
+                            oninput="caretInput(this);"
+                            ondragover="stopCaret(this)"
+                            ondragend="startCaret(this)"
+                     >
+                    </div>
+                    <div class="generateButtonBackground">
+                        <input type="submit" class="generateButton" name="generateButton" id="generateButton" value="">
+                    </div>
+                </form >
+                <div class="machineLinks unselectable">
+                    <a href="https://github.com/Styro457" target=”_blank”><button class="githubAuthorButton"></button></a>
+                    <a href="https://github.com/Styro457/Wordish.Name" target=”_blank”><button class="githubPageButton"></button></a>
                 </div>
-                <div class="generateButtonBackground">
-                    <input type="submit" class="generateButton" name="generateButton" id="generateButton" value="">
-                </div>
-            </form >
+            </div>
         </div>
     </div>
 
