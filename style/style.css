@@ -1,6 +1,6 @@
 body {
     background-size: cover;
-    background: url("../assets/background.png") no-repeat center center fixed;
+    background: url("../assets/images/background.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -84,7 +84,7 @@ input.PixelatedInput[type=text]:focus {
 
 .generateButtonBackground {
     position: absolute;
-    background: url("../assets/buttonBase.png") no-repeat;
+    background: url("../assets/images/buttonBase.png") no-repeat;
     background-origin: content-box;
     background-size: 100% 100%;
     right:12.7%;
@@ -95,7 +95,7 @@ input.PixelatedInput[type=text]:focus {
 
 .generateButton {
     position: absolute;
-    background: url("../assets/button.png") no-repeat;
+    background: url("../assets/images/button.png") no-repeat;
     background-origin: content-box;
     background-size: 100% 100%;
     width: 76%;
@@ -166,5 +166,5 @@ input.PixelatedInput[type=text]:focus {
 
 @font-face {
     font-family: pixelatedFont;
-    src: url('../assets/upheavtt.ttf') format('truetype');
+    src: url('../assets/fonts/upheavtt.ttf') format('truetype');
 }
