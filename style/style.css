@@ -50,12 +50,12 @@ form {
 input.PixelatedInput[type=text] {
     width: 100%;
     height: 100%;
-    padding-left: 10px;
+    padding-left: 0.5em;
     font-family: "pixelatedFont", "sans-serif";
-    font-size: 27px;
-    margin-top: 5px;
+    margin-top: 0.3em;
     font-weight:normal;
     font-style:normal;
+    font-size: min(3vw, 27px);
     font-smooth: never;
     -webkit-font-smoothing : none;
     background: transparent;
@@ -108,8 +108,11 @@ input.PixelatedInput[type=text]:focus {
 }
 
 .generateButton:disabled {
-
+    filter: brightness(90%);
+    transform: scale(0.95, 0.95);
+    cursor: pointer;
 }
+
 .unselectable {
     user-drag: none;
     -webkit-user-drag: none;
