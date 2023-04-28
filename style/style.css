@@ -81,22 +81,22 @@ input.PixelatedInput[type=text]:focus {
     position: absolute;
     background: url("../assets/buttonBase.png") no-repeat;
     background-origin: content-box;
-    background-size: 100%;
+    background-size: 100% 100%;
     right:12.7%;
-    bottom:13.5%;
+    bottom:14.3%;
     width: 13.3%;
-    height: 16.2%;
+    height: 15.6%;
 }
 
 .generateButton {
     position: absolute;
     background: url("../assets/button.png") no-repeat;
     background-origin: content-box;
-    background-size: 100%;
+    background-size: 100% 100%;
     width: 76%;
-    height: 74%;
-    right: 13%;
-    bottom: 14%;
+    height: 72%;
+    right: 12.4%;
+    bottom: 15%;
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
     border: none;
 
