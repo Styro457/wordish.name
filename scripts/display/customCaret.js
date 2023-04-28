@@ -2,6 +2,8 @@ let caretAnimation = false;
 let caretTimerID;
 let lastInput = null;
 
+document.getElementById("wordsInput").focus();
+
 function startCaret(input) {
     caretTimerID = setInterval(animateCaret, 500, input);
     animateCaret(input);
