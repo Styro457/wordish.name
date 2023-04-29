@@ -93,7 +93,7 @@ input.PixelatedInput[type=text]:focus {
 
 .generateButtonBackground {
     position: absolute;
-    background: url("../assets/images/buttonBase.png") no-repeat;
+    background: url("../assets/images/buttonBase.webp") no-repeat;
     background-origin: content-box;
     background-size: 100% 100%;
     right:12.7%;
@@ -104,7 +104,7 @@ input.PixelatedInput[type=text]:focus {
 
 .generateButton {
     position: absolute;
-    background: url("../assets/images/button.png") no-repeat;
+    background: url("../assets/images/button.webp") no-repeat;
     background-origin: content-box;
     background-size: 100% 100%;
     width: 76%;
