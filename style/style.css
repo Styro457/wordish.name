@@ -1,6 +1,6 @@
 body {
     background-size: cover;
-    background: url("../assets/images/optimized-background.jpg") no-repeat center center fixed;
+    background: #ce6a7a url("../assets/images/optimized-background.jpg") no-repeat fixed center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
