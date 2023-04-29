@@ -8,30 +8,30 @@
 
 @keyframes fadeOut {
     0% { opacity: 1; }
-    12% { opacity: 1; }
+    5% { opacity: 1; }
     100% { opacity: 0; }
 }
 
 @-moz-keyframes fadeOut {
     0% { opacity: 1; }
-    12% { opacity: 1; }
+    5% { opacity: 1; }
     100% { opacity: 0; }
 }
 
 @-webkit-keyframes fadeOut {
     0% { opacity: 1; }
-    12% { opacity: 1; }
+    5% { opacity: 1; }
     100% { opacity: 0; }
 }
 
 @-o-keyframes fadeOut {
     0% { opacity: 1; }
-    12% { opacity: 1; }
+    5% { opacity: 1; }
     100% { opacity: 0; }
 }
 
 @-ms-keyframes fadeOut {
     0% { opacity: 1; }
-    12% { opacity: 1; }
+    5% { opacity: 1; }
     100% { opacity: 0; }
 }
