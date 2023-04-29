@@ -26,18 +26,16 @@ body {
 
 .title {
     display: block;
-    margin: 0 auto;
     height: auto;
-    margin-bottom: -10%;
+    margin: 0 auto -10%;
 }
 
 .machine {
     position: relative;
     display: block;
-    margin: 0 auto;
     width: min(900px, 100vw);
     height: auto;
-    margin-bottom: -10%;
+    margin: 0 auto -10%;
 }
 
 .machineBody {
