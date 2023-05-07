@@ -136,6 +136,16 @@ input.PixelatedInput[type=text]:focus {
     cursor: pointer;
 }
 
+.machineScreen {
+    position: absolute;
+    top: 37%;
+    right: 15%;
+    background: url("../assets/images/machineScreen_Off.webp") no-repeat center center;
+    background-size: 100%;
+    width: 23%;
+    height: 20%;
+}
+
 .machineLinks {
     position: absolute;
     right: 10%;
