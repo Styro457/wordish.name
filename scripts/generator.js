@@ -96,11 +96,12 @@ async function addResultsForKeyword(keywordsRaw) {
     words = words.filter(function(item) {
         let k = item.word;
         if(seen.hasOwnProperty(k)) {
-            seen[k]++;
+            seen[k]["seen"]++;
             return false;
         }
         else {
-            seen[k] = 1;
+            seen[k] = item;
+            item["seen"] = 1;
             return true;
         }
     })
