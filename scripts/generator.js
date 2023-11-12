@@ -106,11 +106,14 @@ async function addResultsForKeyword(keywordsRaw) {
         }
     })
     words = words.sort(function(a, b){
-        return a.word.length - b.word.length;
+        let seenDifference = b.seen - a.seen;
+        if(seenDifference === 0)
+            return a.word.length - b.word.length;
+        return seenDifference;
     });
     console.log("REMAINING: ")
     console.log(words);
-    document.getElementById("resultsFoundText").textContent = "Words found: " + words.length;
+    document.getElementById("resultsFoundText").textContent = "Words found: ";
     resultsFound.textContent = 0 + "";
     globalWords = words;
     checkWords(0);
