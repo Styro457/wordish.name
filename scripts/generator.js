@@ -1,6 +1,6 @@
 const resultsDiv = document.getElementById("results");
 const allWordsText = document.getElementById("allWordsText");
-const resultsFound = document.getElementById("resultsFound");
+const foundWordsCount = document.getElementById("foundWordsCount");
 
 let globalWords = [];
 
@@ -51,7 +51,7 @@ function addWord(word) {
 
 function checkWords(i) {
     addResult(globalWords[i]);
-    resultsFound.textContent = Number(resultsFound.textContent) + 1 + "";
+    foundWordsCount.textContent = String((Number(foundWordsCount.textContent) + 1));
     if(i < globalWords.length-1)
         setTimeout(checkWords.bind(null, i + 1), 50);
     else
@@ -113,8 +113,7 @@ async function addResultsForKeyword(keywordsRaw) {
     });
     console.log("REMAINING: ")
     console.log(words);
-    document.getElementById("resultsFoundText").textContent = "Words found: ";
-    resultsFound.textContent = 0 + "";
+    foundWordsCount.textContent = 0 + "";
     globalWords = words;
     checkWords(0);
 }
