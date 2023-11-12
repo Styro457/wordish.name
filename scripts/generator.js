@@ -63,37 +63,50 @@ async function addResultsForKeyword(keywordsRaw) {
     const keywords = keywordsRaw.split(/[\s,]+/);
     console.log(keywords);
 
+    let words = []
+
     // Generate related words both with and without the other words set as topics
     for(let i = 0; i < keywords.length; i++) {
         await getRelatedWords(
             keywords[i],
             keywords.slice().splice(i, 1),
             undefined, undefined,
-            300, "f:0.00", 4).then(words => {
-            globalWords = globalWords.concat(words);
-        });
+            300, "f:0.00", 4
+        ).then(result => {
+            words = words.concat(result);
+        })
     }
     for(let i = 0; i < keywords.length; i++) {
         await getRelatedWords(
             keywords[i],
             null,
             undefined, undefined,
-            300, "f:0.00", 4).then(words => {
-            globalWords = globalWords.concat(words);
+            300, "f:0.00", 4
+        ).then(result => {
+            words = words.concat(result);
         });
     }
 
-    console.log(globalWords);
+    console.log("ALL WORDS: ")
+    console.log(words);
     const seen = {};
-    globalWords = globalWords.filter(function(item) {
+    words = words.filter(function(item) {
         let k = item.word;
-        return seen.hasOwnProperty(k) ? false : (seen[k] = true);
+        if(seen.hasOwnProperty(k)) {
+            seen[k]++;
+            return false;
+        }
+        else {
+            seen[k] = 1;
+            return true;
+        }
     })
-    globalWords = globalWords.sort(function(a, b){
+    words = words.sort(function(a, b){
         return a.word.length - b.word.length;
     });
-    console.log(globalWords);
-    document.getElementById("resultsFoundText").textContent = "Words found: ";
+    console.log("REMAINING: ")
+    console.log(words);
+    document.getElementById("resultsFoundText").textContent = "Words found: " + words.length;
     resultsFound.textContent = 0 + "";
     checkWords(0);
 }
