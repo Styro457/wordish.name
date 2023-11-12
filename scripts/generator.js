@@ -59,8 +59,11 @@ function checkWords(i) {
 }
 
 async function addResultsForKeyword(keywordsRaw) {
-    const keywords = keywordsRaw.split(/[\s,]+/);;
+    //Split the raw input into words. The words should be separated by commas
+    const keywords = keywordsRaw.split(/[\s,]+/);
     console.log(keywords);
+
+    // Generate related words both with and without the other words set as topics
     for(let i = 0; i < keywords.length; i++) {
         await getRelatedWords(
             keywords[i],
@@ -79,6 +82,7 @@ async function addResultsForKeyword(keywordsRaw) {
             globalWords = globalWords.concat(words);
         });
     }
+
     console.log(globalWords);
     const seen = {};
     globalWords = globalWords.filter(function(item) {

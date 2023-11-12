@@ -1,6 +1,8 @@
 function getRelatedWords(word, topics, firstLetter, lastLetter, limit, frequencyLimit, minLenght) {
     return new Promise((resolve) => {
         let url = "https://api.datamuse.com/words?ml=" + word + "&max=" + limit + "&md=df";
+
+        //Add topics to the api input if they are specified
         if(topics !== null && topics.length > 0) {
             let topicsString = topics[0];
             for (let i = 1; i < Math.max(topics.length, 5); i++) {
@@ -8,6 +10,8 @@ function getRelatedWords(word, topics, firstLetter, lastLetter, limit, frequency
             }
             url = url + "&topics=" + topicsString;
         }
+
+        //Get the api response
         fetch("https://api.datamuse.com/words?ml=" + word + "&max=" + limit + "&md=df").then(response => {
             return response.json()
         }).then(data => {
