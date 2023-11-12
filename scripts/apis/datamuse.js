@@ -12,7 +12,7 @@ function getRelatedWords(word, topics, firstLetter, lastLetter, limit, frequency
         }
 
         //Get the api response
-        fetch("https://api.datamuse.com/words?ml=" + word + "&max=" + limit + "&md=df").then(response => {
+        fetch(url).then(response => {
             return response.json()
         }).then(data => {
             const words = []
