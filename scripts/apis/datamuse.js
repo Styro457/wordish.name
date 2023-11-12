@@ -1,4 +1,4 @@
-function getRelatedWords(word, topics, firstLetter, lastLetter, limit, frequencyLimit, minLenght) {
+function getRelatedWords(word, topics, firstLetter, lastLetter, limit, frequencyLimit, minLength) {
     return new Promise((resolve) => {
         let url = "https://api.datamuse.com/words?ml=" + word + "&max=" + limit + "&md=df";
 
@@ -21,7 +21,7 @@ function getRelatedWords(word, topics, firstLetter, lastLetter, limit, frequency
                 frequency = data[i]["tags"][data[i]["tags"].length-1]
                 word = data[i]["word"];
                 addWord(word);
-                if(frequency.startsWith(frequencyLimit) && !word.includes(" ") && word.length >= minLenght) {
+                if(frequency.startsWith(frequencyLimit) && !word.includes(" ") && word.length >= minLength) {
                     words.push(
                         {
                             word: word,
