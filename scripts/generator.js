@@ -58,6 +58,10 @@ function checkWords(i) {
         document.getElementById("generateButton").disabled = false;
 }
 
+function updateCheckedWordsCount(amount) {
+    checkedWordsCount.textContent = String(Number(checkedWordsCount.textContent) + amount);
+}
+
 async function addResultsForKeyword(keywordsRaw) {
     //Split the raw input into words. The words should be separated by commas
     const keywords = keywordsRaw.split(/[\s,]+/);
@@ -68,26 +72,26 @@ async function addResultsForKeyword(keywordsRaw) {
 
     // Generate related words both with and without the other words set as topics
     for(let i = 0; i < keywords.length; i++) {
-        topics = keywords.slice()
-        topics.splice(i, 1)
-        await getRelatedWords(
-            keywords[i],
-            topics,
-            undefined, undefined,
-            300, "f:0.00", 4
-        ).then(result => {
+        await getRelatedWords(keywords[i], "ml", null, undefined, undefined, 300, "f:0.00", 4).then(result => {
             words = words.concat(result);
+            updateCheckedWordsCount(result.length);
         })
-    }
-    for(let i = 0; i < keywords.length; i++) {
-        await getRelatedWords(
-            keywords[i],
-            null,
-            undefined, undefined,
-            300, "f:0.00", 4
-        ).then(result => {
-            words = words.concat(result);
-        });
+        for(let j = 0; j < keywords.length; j++) {
+            if(i === j)
+                continue;
+            await getRelatedWords(keywords[i] + ", " + keywords[j], "ml", [keywords[j]], undefined, undefined, 300, "f:0.00", 4).then(result => {
+                words = words.concat(result);
+                updateCheckedWordsCount(result.length);
+            })
+            for(let k = 0; k < keywords.length; k++) {
+                if(j === k || i === k)
+                    continue;
+                await getRelatedWords(keywords[i] + ", " + keywords[j] + ", " + keywords[k], "ml", [keywords[j]], undefined, undefined, 300, "f:0.00", 4).then(result => {
+                    words = words.concat(result);
+                    updateCheckedWordsCount(result.length);
+                })
+            }
+        }
     }
 
     console.log("ALL WORDS: ")
