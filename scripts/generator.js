@@ -64,12 +64,15 @@ async function addResultsForKeyword(keywordsRaw) {
     console.log(keywords);
 
     let words = []
+    let topics
 
     // Generate related words both with and without the other words set as topics
     for(let i = 0; i < keywords.length; i++) {
+        topics = keywords.slice()
+        topics.splice(i, 1)
         await getRelatedWords(
             keywords[i],
-            keywords.slice().splice(i, 1),
+            topics,
             undefined, undefined,
             300, "f:0.00", 4
         ).then(result => {
@@ -108,6 +111,7 @@ async function addResultsForKeyword(keywordsRaw) {
     console.log(words);
     document.getElementById("resultsFoundText").textContent = "Words found: " + words.length;
     resultsFound.textContent = 0 + "";
+    globalWords = words;
     checkWords(0);
 }
 
