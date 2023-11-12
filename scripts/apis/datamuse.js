@@ -20,7 +20,7 @@ function getRelatedWords(word, topics, firstLetter, lastLetter, limit, frequency
             for(let i in data) {
                 frequency = data[i]["tags"][data[i]["tags"].length-1]
                 word = data[i]["word"];
-                addWord(word);
+                //addWord(word);
                 if(frequency.startsWith(frequencyLimit) && !word.includes(" ") && word.length >= minLength) {
                     words.push(
                         {
