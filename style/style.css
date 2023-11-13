@@ -146,11 +146,22 @@ input.PixelatedInput[type=text]:focus {
     height: 20%;
 }
 
+.count {
+    text-align: left;
+}
+
+
 .foundWordsCount {
+    position: absolute;
+    top: 113%;
+    right: 24%;
+    opacity: 0;
+}
+
+.checkedWordsCount {
     position: absolute;
     top: 93%;
     right: 24%;
-    text-align: left;
 }
 
 .machineLinks {
