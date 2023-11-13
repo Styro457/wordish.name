@@ -8,6 +8,8 @@ const audioIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height
 
 let globalWords = [];
 function addResult(word) {
+    if(word === undefined || word === null)
+        return;
     let div = document.createElement("div");
     div.className = "result";
 
