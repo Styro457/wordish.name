@@ -1,10 +1,3 @@
-function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
-}
-
-const wordSearchTypes = ["ml", "rel_jja", "rel_jjb", "rel_syn", "rel_trg", "rel_spc", "rel_gen", "rel_com", "rel_par"]
-
-
 function getRelatedWords(word, searchType, topics, firstLetter, lastLetter, limit, frequencyLimit, minLength) {
     return new Promise((resolve) => {
         let url = "https://api.datamuse.com/words?" + searchType + "=" + word + "&max=" + limit + "&md=df";
@@ -40,17 +33,4 @@ function getRelatedWords(word, searchType, topics, firstLetter, lastLetter, limi
             resolve(words)
         })
     })
-}
-
-async function getAllRelatedWords(word, topics, firstLetter, lastLetter, limit, frequencyLimit, minLength) {
-    let words = [];
-    for (let searchType in wordSearchTypes) {
-        await getRelatedWords(word, wordSearchTypes[searchType], null, firstLetter, lastLetter, limit, frequencyLimit, minLength).then(result => {
-            console.log(result);
-            words = words.concat(result);
-        });
-        await delay(1);
-    }
-    console.log("WORDS: " + words);
-    return words;
 }
