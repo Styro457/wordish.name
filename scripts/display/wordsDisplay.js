@@ -44,9 +44,10 @@ function addResult(word) {
 
 function displayWord(i) {
     addResult(globalWords[i]);
-    foundWordsCount.textContent = String((Number(foundWordsCount.textContent) + 1));
+    let wordCount = Number(foundWordsCount.textContent);
+    foundWordsCount.textContent = String(wordCount + 1);
     if(i < globalWords.length-1)
-        setTimeout(displayWord.bind(null, i + 1), 50);
+        setTimeout(displayWord.bind(null, i + 1), wordCount < 3 ? 200 : 50);
     else
         document.getElementById("generateButton").disabled = false;
 }
