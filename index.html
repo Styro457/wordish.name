@@ -28,8 +28,10 @@
                             onfocus="startCaret(this);"
                             onfocusout="stopCaret(this);"
                             oninput="caretInput(this);"
+                            ondragenter="stopCaret(this);"
                             ondragover="stopCaret(this);"
                             ondragend="startCaret(this);"
+                            ondragstart="stopCaret(this);"
                             onkeydown="caretMove(this)"
                             onkeyup="caretMove(this)"
                      >
