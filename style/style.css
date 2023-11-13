@@ -6,6 +6,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
     overflow-x: hidden;
+
+    --dirty_white: #bcbed5;
 }
 
 .cover {
@@ -147,7 +149,10 @@ input.PixelatedInput[type=text]:focus {
 }
 
 .count {
+    color: var(--dirty_white);
     text-align: left;
+    font-family: "OCR-A", "sans-serif";
+    font-size: small;
 }
 
 
@@ -160,7 +165,7 @@ input.PixelatedInput[type=text]:focus {
 
 .checkedWordsCount {
     position: absolute;
-    top: 93%;
+    top: 95.5%;
     right: 24%;
 }
 
@@ -200,9 +205,4 @@ input.PixelatedInput[type=text]:focus {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-}
-
-@font-face {
-    font-family: pixelatedFont;
-    src: url('../assets/fonts/upheavtt.ttf') format('truetype');
 }

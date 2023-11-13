@@ -1,0 +1,9 @@
+@font-face {
+    font-family: pixelatedFont;
+    src: url('../assets/fonts/upheavtt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: OCR-A;
+    src: url('../assets/fonts/OCR-A-Regular.ttf') format('truetype');
+}
