@@ -6,6 +6,9 @@ body {
     -o-background-size: cover;
     background-size: cover;
     overflow-x: hidden;
+
+    --dirty_white: #bcbed5;
+    --dirty_black: #1d1d21;
 }
 
 .cover {
@@ -25,154 +28,15 @@ body {
 }
 
 .title {
+    position: absolute;
     display: block;
     height: auto;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 100%;
-    margin: 0 auto -10%;
-}
-
-.machine {
-    position: relative;
-    display: block;
-    width: min(900px, 100vw);
-    height: auto;
-    margin: 0 auto -10%;
-}
-
-.machineBody {
-    width: 100%;
-    height: auto;
-}
-
-.machineUI {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-}
-
-.machineForm {
-    width: 100%;
-    height: 100%;
-}
-
-
-.machineInput {
-    position: absolute;
-    top: 20.6%;
-    left: 12%;
-    width: 49%;
-    height: 4.8%;
-}
-
-input.PixelatedInput[type=text] {
-    width: 100%;
-    height: 100%;
-    padding-left: 0.5em;
-    font-family: "pixelatedFont", "sans-serif";
-    margin-top: 0.3em;
-    font-weight:normal;
-    font-style:normal;
-    font-size: min(3vw, 27px);
-    font-smooth: never;
-    -webkit-font-smoothing : none;
-    background: transparent;
-    border: none;
-    outline: none;
-}
-
-input.PixelatedInput[type=text]:focus {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: none;
-    border: none;
-    outline: none;
-    caret-shape: underscore;
-    caret-color: transparent;
-}
-
-.generateButtonBackground {
-    position: absolute;
-    background: url("../assets/images/buttonBase.webp") no-repeat;
-    background-origin: content-box;
-    background-size: 100% 100%;
-    right:12.7%;
-    bottom:14.3%;
-    width: 13.3%;
-    height: 15.6%;
-}
-
-.generateButton {
-    position: absolute;
-    background: url("../assets/images/button.webp") no-repeat;
-    background-origin: content-box;
-    background-size: 100% 100%;
-    width: 76%;
-    height: 72%;
-    right: 12.4%;
-    bottom: 15%;
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-    border: none;
-
-}
-
-.generateButton:hover {
-    filter: brightness(110%);
-    transform: scale(1.05, 1.05);
-    cursor: pointer;
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.generateButton:active {
-    filter: brightness(90%);
-    transform: scale(0.95, 0.95);
-    cursor: pointer;
-}
-
-.generateButton:disabled {
-    filter: brightness(90%);
-    transform: scale(0.95, 0.95);
-    cursor: pointer;
-}
-
-.machineScreen {
-    position: absolute;
-    top: 37%;
-    right: 15%;
-    background: url("../assets/images/machineScreen_Off.webp") no-repeat center center;
-    background-size: 100%;
-    width: 23%;
-    height: 20%;
-}
-
-.machineLinks {
-    position: absolute;
-    right: 10%;
-    bottom: 10%;
-    width: 15%;
-    height: 5%;
-    overflow: hidden;
-}
-
-.githubAuthorButton {
-    height: 100%;
-    width: 66%;
-    padding-top: 30%;
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.githubPageButton {
-    height: 100%;
-    width: 27%;
-    padding-top: 30%;
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
+    padding-top: 1%;
 }
 
 .unselectable {
@@ -184,7 +48,29 @@ input.PixelatedInput[type=text]:focus {
     -ms-user-select: none;
 }
 
-@font-face {
-    font-family: pixelatedFont;
-    src: url('../assets/fonts/upheavtt.ttf') format('truetype');
+.scrollBar {
+    scrollbar-color: #3c533a rgba(0, 0, 0, 0);
+    scrollbar-width: initial;
+}
+
+/* width */
+.scrollBar::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 5px;
+}
+
+/* Track */
+.scrollBar::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+.scrollBar::-webkit-scrollbar-thumb {
+    background: #3c533a;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.scrollBar::-webkit-scrollbar-thumb:hover {
+    background: #557652;
 }

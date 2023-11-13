@@ -1,10 +1,12 @@
+const emptyResults = resultsDiv.innerHTML;
+
 function onFormSubmit(word, button) {
-    allWordsText.innerHTML = "";
-    resultsDiv.innerHTML = "";
+    resultsDiv.innerHTML = emptyResults;
     globalWords = [];
     const createResults = async () => {
-        await addResultsForKeyword(word);
+        let words = await generateWords(word.toLowerCase());
+        displayResults(words)
     }
-    createResults().then(r => {});
+    createResults().then(() => {});
     button.disabled = true;
 }

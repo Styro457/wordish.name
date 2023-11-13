@@ -1,0 +1,60 @@
+.results {
+    position: absolute;
+    left: 26%;
+    top: 47%;
+    width: 50%;
+    padding: 8% 1% 0 1%;
+    opacity: 0;
+    z-index: -1;
+    transition: top 0.5s ease-in-out;
+    background: #ffffff url("../assets/images/paper_texture.webp");
+}
+
+.resultsSummary {
+    text-align: center;
+    margin-top: 0;
+}
+
+.result {
+    margin-bottom: 2.5em;
+    margin-top: 0.5em;
+    padding-left: 8%;
+    padding-right: 8%;
+    border: var(--dirty_black) solid 1px 2px;
+    border-top: 1px dashed var(--dirty_black);
+}
+
+.resultWord {
+    color: var(--dirty_black);
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 0;
+    margin-top: 1.4em;
+}
+
+.resultAudio {
+    position: absolute;
+    margin-left: 0.5em;
+    background: none;
+    height: 1.8em;
+    border: none;
+    color: rgb(128, 128, 128);
+    transition: color 0.2s;
+}
+
+.resultAudio:hover {
+    color: var(--dirty_black);
+}
+
+
+.resultFrequency {
+    margin-top: 0em;
+    margin-bottom: 0;
+    font-size: small;
+    color: rgb(128, 128, 128);
+}
+
+.resultDescription {
+    color: var(--dirty_black);
+    padding-right: 0;
+}
