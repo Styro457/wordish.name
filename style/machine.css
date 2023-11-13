@@ -33,6 +33,15 @@
     height: 4.8%;
 }
 
+.inputLabel {
+    position: absolute;
+    top: 142%;
+    left: 14%;
+    font-size: min(1.5vw, 13px);
+    color: var(--dirty_white);
+    font-family: "OCR-A", "sans-serif";
+}
+
 input.PixelatedInput[type=text] {
     width: 100%;
     height: 100%;

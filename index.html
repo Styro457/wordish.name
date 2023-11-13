@@ -33,16 +33,17 @@
             <div class="machineUI">
                 <form class="machineForm" action="javascript:onFormSubmit(wordsInput.value, generateButton)">
                     <div class="machineInput">
-                     <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
-                            onfocus="startCaret(this);"
-                            onfocusout="stopCaret(this);"
-                            oninput="caretInput(this);"
-                            ondragenter="stopCaret(this);"
-                            ondragover="stopCaret(this);"
-                            ondragend="startCaret(this);"
-                            ondragstart="stopCaret(this);"
-                            onkeydown="caretMove(this)"
-                            onkeyup="caretMove(this)"
+                        <label for="wordsInput" class="inputLabel">Enter a few related words separated by commas</label>
+                        <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
+                                                               onfocus="startCaret(this);"
+                                                               onfocusout="stopCaret(this);"
+                                                               oninput="caretInput(this);"
+                                                               ondragenter="stopCaret(this);"
+                                                               ondragover="stopCaret(this);"
+                                                               ondragend="startCaret(this);"
+                                                               ondragstart="stopCaret(this);"
+                                                               onkeydown="caretMove(this)"
+                                                               onkeyup="caretMove(this)"
                      >
                     </div>
                     <div class="generateButtonBackground">
@@ -56,7 +57,7 @@
                     <p class="foundWordsCount count" id="foundWordsCount"></p>
                 </div>
                 <div class="machineLinks unselectable">
-                    <a href="https://github.com/Styro457" target=”_blank”><button class="githubAuthorButton"></button></a>
+                    <a href="https://github.com/Styro457" target=”_blank” rel="author"><button class="githubAuthorButton"></button></a>
                     <a href="https://github.com/Styro457/Wordish.Name" target=”_blank”><button class="githubPageButton"></button></a>
                 </div>
             </div>
