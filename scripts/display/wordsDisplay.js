@@ -1,6 +1,5 @@
 const resultsDiv = document.getElementById("results");
 const foundWordsCount = document.getElementById("foundWordsCount");
-const resultsSummary = document.getElementById("resultsSummary");
 
 let globalWords = [];
 function addResult(word) {
@@ -57,7 +56,7 @@ function displayResults(words) {
     resultsDiv.style.top = "87%";
     foundWordsCount.textContent = 0 + "";
 
-    resultsSummary.textContent = "- " + words.length + " words found -";
+    document.getElementById("resultsSummary").textContent = "- " + words.length + " words found -";
 
     globalWords = words;
     displayWord(0);
