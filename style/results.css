@@ -9,3 +9,47 @@
     z-index: -1;
     transition: top 0.5s ease-in-out;
 }
+
+.result {
+    margin-bottom: 2.5em;
+    margin-top: 0.5em;
+    padding-left: 8%;
+    padding-right: 8%;
+    border: var(--dirty_black) solid 1px 2px;
+    border-top: 1px dashed var(--dirty_black);
+}
+
+.resultWord {
+    color: var(--dirty_black);
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 0;
+    margin-top: 0.8em;
+}
+
+.resultAudio {
+    position: absolute;
+    margin-left: 0.5em;
+    background: none;
+    height: 1.8em;
+    border: none;
+    color: gray;
+    transition: color 0.2s;
+}
+
+.resultAudio:hover {
+    color: var(--dirty_black);
+}
+
+
+.resultFrequency {
+    margin-top: 0em;
+    margin-bottom: 0;
+    font-size: small;
+    color: gray;
+}
+
+.resultDescription {
+    color: var(--dirty_black);
+    padding-right: 0;
+}
