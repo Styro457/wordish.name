@@ -3,7 +3,8 @@ function onFormSubmit(word, button) {
     resultsDiv.innerHTML = "";
     globalWords = [];
     const createResults = async () => {
-        await addResultsForKeyword(word.toLowerCase());
+        let words = await generateWords(word.toLowerCase());
+        displayResults(words)
     }
     createResults().then(r => {});
     button.disabled = true;
