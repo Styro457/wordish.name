@@ -112,8 +112,8 @@ input.PixelatedInput[type=text]:focus {
     background-size: 100% 100%;
     width: 76%;
     height: 72%;
-    right: 12.4%;
-    bottom: 15%;
+    right: 12.7%;
+    bottom: 14.5%;
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
     border: none;
 
