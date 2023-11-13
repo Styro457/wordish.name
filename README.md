@@ -15,13 +15,6 @@ The website takes as input a few words or group of words sepparated by commas an
 
 By using actual words from the dictionery the names will not only be easy to pronounce, but could also cary some meaning about the project it is used for.
 
-# Interface
-
-# Examples
-An example of a name generated using this method is this website, which has named itself. Here are a few other projects where I used it:
-- [Tinge](https://github.com/Styro457/Tinge) - a trace of a color -> Javascript GameEngine
-
-
 # Features
 
 # Planned Features
