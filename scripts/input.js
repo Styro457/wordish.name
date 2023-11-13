@@ -7,6 +7,6 @@ function onFormSubmit(word, button) {
         let words = await generateWords(word.toLowerCase());
         displayResults(words)
     }
-    createResults().then(r => {});
+    createResults().then(() => {});
     button.disabled = true;
 }

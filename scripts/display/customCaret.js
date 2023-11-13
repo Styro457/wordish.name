@@ -58,7 +58,7 @@ function caretMove(input) {
     lastInput = Date.now();
 }
 
-function caretInput(input, event) {
+function caretInput(input) {
     if(caretTimerID !== null) {
         if(!caretAnimation) {
             if(!input.value.includes("_")) {
