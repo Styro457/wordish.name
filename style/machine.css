@@ -37,9 +37,6 @@
     position: absolute;
     top: 142%;
     left: 14%;
-    font-size: min(1.5vw, 13px);
-    color: var(--dirty_white);
-    font-family: "OCR-A", "sans-serif";
 }
 
 input.PixelatedInput[type=text] {
@@ -147,15 +144,6 @@ input.PixelatedInput[type=text]:focus {
     z-index: 2;
 }
 
-
-.count {
-    color: var(--dirty_white);
-    text-align: left;
-    font-family: "OCR-A", "sans-serif";
-    font-size: small;
-}
-
-
 .foundWordsCount {
     position: absolute;
     top: 113%;
@@ -167,7 +155,6 @@ input.PixelatedInput[type=text]:focus {
     position: absolute;
     top: 97%;
     right: 23%;
-    font-size: min(1.5vw, 13px);
 }
 
 .machineLinks {
