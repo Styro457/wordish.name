@@ -1,9 +1,9 @@
 @font-face {
     font-family: pixelatedFont;
-    src: url('../assets/fonts/upheavtt.ttf') format('truetype');
+    src: url('../assets/fonts/upheavtt.woff2') format('truetype');
 }
 
 @font-face {
     font-family: OCR-A;
-    src: url('../assets/fonts/OCR-A-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/OCR-A-Regular.woff2') format('truetype');
 }
