@@ -1,7 +1,15 @@
 const checkedWordsCount = document.getElementById("checkedWordsCount");
+const screenWords = document.getElementById("screenWords");
+const machineScreenOn = document.getElementById("machineScreenOn");
 
 function updateCheckedWordsCount(amount) {
     checkedWordsCount.textContent = String(Number(checkedWordsCount.textContent) + amount);
+}
+
+async function addScreenWords(words) {
+    for(let i = 0; i < words.length; i++) {
+        screenWords.textContent += words[i].word + "\r\n";
+    }
 }
 
 async function generateWords(keywordsRaw) {
@@ -13,11 +21,13 @@ async function generateWords(keywordsRaw) {
     let topics
 
     checkedWordsCount.textContent = undefined;
+    machineScreenOn.style.opacity = "100%";
     // Generate words using different combinations of keywords
     for(let i = 0; i < keywords.length; i++) {
         await getRelatedWords(keywords[i], "ml", null, undefined, undefined, 300, "f:0.00", 4).then(result => {
             words = words.concat(result);
             updateCheckedWordsCount(result.length);
+            addScreenWords(result);
         })
         for(let j = 0; j < keywords.length; j++) {
             if(i === j)
@@ -25,6 +35,7 @@ async function generateWords(keywordsRaw) {
             await getRelatedWords(keywords[i] + ", " + keywords[j], "ml", [keywords[j]], undefined, undefined, 300, "f:0.00", 4).then(result => {
                 words = words.concat(result);
                 updateCheckedWordsCount(result.length);
+                addScreenWords(result);
             })
             for(let k = 0; k < keywords.length; k++) {
                 if(j === k || i === k)
@@ -32,6 +43,7 @@ async function generateWords(keywordsRaw) {
                 await getRelatedWords(keywords[i] + ", " + keywords[j] + ", " + keywords[k], "ml", [keywords[j]], undefined, undefined, 300, "f:0.00", 4).then(result => {
                     words = words.concat(result);
                     updateCheckedWordsCount(result.length);
+                    addScreenWords(result);
                 })
             }
         }

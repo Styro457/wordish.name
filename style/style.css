@@ -8,6 +8,7 @@ body {
     overflow-x: hidden;
 
     --dirty_white: #bcbed5;
+    --dirty_black: #1d1d21;
 }
 
 .cover {
@@ -146,6 +147,30 @@ input.PixelatedInput[type=text]:focus {
     background-size: 100%;
     width: 23%;
     height: 20%;
+}
+
+.machineScreenOn {
+    opacity: 0;
+    background: url("../assets/images/machineScreen_On.webp") no-repeat center center;
+    background-size: 100%;
+    z-index: 1;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.screenWords {
+    position: absolute;
+    top: 0%;
+    left: 8%;
+    width: 90%;
+    height: 87%;
+    text-align: left;
+    font-family: "pixelatedFont", "sans-serif";
+    color: var(--dirty_black);
+    opacity: 60%;
+    white-space: pre;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 2;
 }
 
 .count {
