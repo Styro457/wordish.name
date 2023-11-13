@@ -1,4 +1,4 @@
-# [wordish.name ![](https://github.com/Styro457/Wordish.Name/assets/69657780/c35bbafa-d4fe-4727-9436-5152671480a6)](https://www.wordish.name/)
+# [wordish.name ![](https://github.com/Styro457/Wordish.Name/assets/69657780/c35bbafa-d4fe-4727-9436-5152671480a6)](https://wordish.name/)
 
 **Generate names for anything using uncommon dictionary words.**<br>
 
