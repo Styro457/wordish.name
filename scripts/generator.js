@@ -13,6 +13,29 @@ async function addScreenWords(words) {
     }
 }
 
+function getUniqueWords(words) {
+    const seen = {};
+    return words.filter(function(item) {
+        let k = item.word;
+        if(seen.hasOwnProperty(k)) {
+            seen[k]["seen"]++;
+            return false;
+        }
+        else {
+            seen[k] = item;
+            item["seen"] = 1;
+            return true;
+        }
+    })
+}
+
+function compareWords(a, b) {
+    let seenDifference = (b.seen-(b.word.length*0.2)) - (a.seen-(a.word.length*0.2));
+    if(seenDifference === 0)
+        return a.word.length - b.word.length;
+    return seenDifference;
+}
+
 async function generateWords(keywordsRaw) {
     //Split the raw input into words. The words should be separated by commas
     const keywords = keywordsRaw.split(/[\s,]+/);
@@ -51,24 +74,5 @@ async function generateWords(keywordsRaw) {
         }
     }
 
-    const seen = {};
-    words = words.filter(function(item) {
-        let k = item.word;
-        if(seen.hasOwnProperty(k)) {
-            seen[k]["seen"]++;
-            return false;
-        }
-        else {
-            seen[k] = item;
-            item["seen"] = 1;
-            return true;
-        }
-    })
-    words = words.sort(function(a, b){
-        let seenDifference = (b.seen-(b.word.length*0.2)) - (a.seen-(a.word.length*0.2));
-        if(seenDifference === 0)
-            return a.word.length - b.word.length;
-        return seenDifference;
-    });
-    return words;
+    return getUniqueWords(words).sort(compareWords);
 }
