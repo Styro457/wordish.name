@@ -22,8 +22,7 @@ async function generateWords(keywordsRaw) {
 
     checkedWordsCount.textContent = undefined;
     screenWords.textContent = undefined;
-    resultsDiv.style.top = "47";
-    resultsDiv.style.opacity = "0";
+    resultsDiv.style = null;
     machineScreenOn.style.opacity = "100%";
 
     // Generate words using different combinations of keywords
