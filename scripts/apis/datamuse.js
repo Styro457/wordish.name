@@ -1,7 +1,6 @@
 function getRelatedWords(word, searchType, topics, firstLetter, lastLetter, limit, frequencyLimit, minLength) {
     return new Promise((resolve) => {
         let url = "https://api.datamuse.com/words?" + searchType + "=" + word + "&max=" + limit + "&md=df";
-        console.log("URL: " + url);
         //Add topics to the api input if they are specified
         if(topics !== null && topics.length > 0) {
             let topicsString = topics[0];

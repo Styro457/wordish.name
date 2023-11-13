@@ -9,16 +9,15 @@ function updateCheckedWordsCount(amount) {
 async function addScreenWords(words) {
     for(let i = 0; i < words.length; i++) {
         screenWords.textContent += words[i].word + "\r\n";
+        screenWords.scrollTop = screenWords.scrollHeight;
     }
 }
 
 async function generateWords(keywordsRaw) {
     //Split the raw input into words. The words should be separated by commas
     const keywords = keywordsRaw.split(/[\s,]+/);
-    console.log(keywords);
 
     let words = []
-    let topics
 
     checkedWordsCount.textContent = undefined;
     screenWords.textContent = undefined;
@@ -52,8 +51,6 @@ async function generateWords(keywordsRaw) {
         }
     }
 
-    console.log("Generated words: ")
-    console.log(words);
     const seen = {};
     words = words.filter(function(item) {
         let k = item.word;
@@ -73,7 +70,5 @@ async function generateWords(keywordsRaw) {
             return a.word.length - b.word.length;
         return seenDifference;
     });
-    console.log("Filtered words: ")
-    console.log(words);
     return words;
 }
