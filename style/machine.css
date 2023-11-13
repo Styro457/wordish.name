@@ -157,8 +157,9 @@ input.PixelatedInput[type=text]:focus {
 
 .checkedWordsCount {
     position: absolute;
-    top: 95.5%;
-    right: 24%;
+    top: 97%;
+    right: 23%;
+    font-size: min(1.5vw, 13px);
 }
 
 .machineLinks {
