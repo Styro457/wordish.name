@@ -124,12 +124,14 @@ input.PixelatedInput[type=text]:focus {
 
 .screenWords {
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 8%;
     width: 88%;
     height: 85%;
+    margin-top: 7%;
     text-align: left;
     font-family: "pixelatedFont", "sans-serif";
+    font-size: min(2vw, 16px);
     color: #3c533a;
     white-space: pre;
     overflow-x: hidden;
