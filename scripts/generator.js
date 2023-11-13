@@ -65,7 +65,7 @@ async function generateWords(keywordsRaw) {
         }
     })
     words = words.sort(function(a, b){
-        let seenDifference = (b.seen-(b.word.length*0.1)) - (a.seen-(a.word.length*0.1));
+        let seenDifference = (b.seen-(b.word.length*0.2)) - (a.seen-(a.word.length*0.2));
         if(seenDifference === 0)
             return a.word.length - b.word.length;
         return seenDifference;
