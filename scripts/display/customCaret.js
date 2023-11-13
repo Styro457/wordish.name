@@ -20,7 +20,6 @@ function stopCaret(input) {
     clearInterval(caretTimerID);
     caretTimerID = null;
     input.value = input.value.replaceAll(caret, "");
-    input.removeEventListener('keydown');
 }
 
 function animateCaret(input) {
