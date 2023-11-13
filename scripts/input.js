@@ -1,5 +1,4 @@
 function onFormSubmit(word, button) {
-    allWordsText.innerHTML = "";
     resultsDiv.innerHTML = "";
     globalWords = [];
     const createResults = async () => {

@@ -1,5 +1,4 @@
 const resultsDiv = document.getElementById("results");
-const allWordsText = document.getElementById("allWordsText");
 const foundWordsCount = document.getElementById("foundWordsCount");
 
 let globalWords = [];
