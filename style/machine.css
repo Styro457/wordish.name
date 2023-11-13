@@ -126,17 +126,17 @@ input.PixelatedInput[type=text]:focus {
     position: absolute;
     top: 0%;
     left: 8%;
-    width: 90%;
-    height: 87%;
+    width: 88%;
+    height: 85%;
     text-align: left;
     font-family: "pixelatedFont", "sans-serif";
-    color: var(--dirty_black);
-    opacity: 60%;
+    color: #3c533a;
     white-space: pre;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     z-index: 2;
 }
+
 
 .count {
     color: var(--dirty_white);

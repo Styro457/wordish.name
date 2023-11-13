@@ -47,3 +47,30 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+.scrollBar {
+    scrollbar-color: #3c533a rgba(0, 0, 0, 0);
+    scrollbar-width: initial;
+}
+
+/* width */
+.scrollBar::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 5px;
+}
+
+/* Track */
+.scrollBar::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+.scrollBar::-webkit-scrollbar-thumb {
+    background: #3c533a;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.scrollBar::-webkit-scrollbar-thumb:hover {
+    background: #557652;
+}
