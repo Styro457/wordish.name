@@ -1,5 +1,7 @@
+const emptyResults = resultsDiv.innerHTML;
+
 function onFormSubmit(word, button) {
-    resultsDiv.innerHTML = "";
+    resultsDiv.innerHTML = emptyResults;
     globalWords = [];
     const createResults = async () => {
         let words = await generateWords(word.toLowerCase());

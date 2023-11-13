@@ -10,6 +10,10 @@
     background: #ffffff url("../assets/images/paper_texture.webp");
 }
 
+.resultsSummary {
+    text-align: center;
+}
+
 .result {
     margin-bottom: 2.5em;
     margin-top: 0.5em;
