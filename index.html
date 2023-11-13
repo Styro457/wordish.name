@@ -42,7 +42,7 @@
                 <form class="machineForm" action="javascript:onFormSubmit(wordsInput.value, generateButton)">
                     <div class="machineInput">
                         <label for="wordsInput" class="inputLabel lightText">Enter a few related words separated by commas</label>
-                        <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
+                        <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" title="Enter related words" required
                                onfocus="startCaret(this);" onfocusout="stopCaret(this);" oninput="caretInput(this);"
                                ondragenter="stopCaret(this);" ondragover="stopCaret(this);" ondragend="startCaret(this);"
                                ondragstart="stopCaret(this);" onkeydown="caretInput(this)" onkeyup="caretInput(this)"
@@ -59,8 +59,8 @@
                     <p class="checkedWordsCount lightText" id="checkedWordsCount"></p>
                 </div>
                 <div class="machineLinks unselectable">
-                    <a href="https://github.com/Styro457" target=”_blank” rel="author"><button class="githubAuthorButton"></button></a>
-                    <a href="https://github.com/Styro457/Wordish.Name" target=”_blank”><button class="githubPageButton"></button></a>
+                    <a href="https://github.com/Styro457" target=”_blank” rel="author"><button class="githubAuthorButton"title="Author"></button></a>
+                    <a href="https://github.com/Styro457/Wordish.Name" target=”_blank”><button class="githubPageButton" title="Github Page"></button></a>
                 </div>
             </div>
         </div>
