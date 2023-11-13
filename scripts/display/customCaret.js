@@ -28,11 +28,13 @@ function animateCaret(input) {
     if(Date.now()-lastInput < 700)
         return;
     if(caretAnimation) {
-        const oldSelectionStart = input.selectionStart;
-        const oldSelectionEnd = input.selectionEnd;
-        input.value = input.value.insert_at(input.selectionStart, caret);
-        input.selectionStart = oldSelectionStart;
-        input.selectionEnd = oldSelectionEnd;
+        if(!input.value.includes(caret)) {
+            const oldSelectionStart = input.selectionStart;
+            const oldSelectionEnd = input.selectionEnd;
+            input.value = input.value.insert_at(input.selectionStart, caret);
+            input.selectionStart = oldSelectionStart;
+            input.selectionEnd = oldSelectionEnd;
+        }
         caretAnimation = !caretAnimation;
     }
     else {
