@@ -52,6 +52,7 @@ function displayWord(i) {
 }
 
 function displayResults(words) {
+    resultsDiv.style.opacity = "100%";
     foundWordsCount.textContent = 0 + "";
     globalWords = words;
     displayWord(0);
