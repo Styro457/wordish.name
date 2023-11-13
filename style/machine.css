@@ -144,11 +144,10 @@ input.PixelatedInput[type=text]:focus {
     z-index: 2;
 }
 
-.foundWordsCount {
+.checkedWords {
     position: absolute;
-    top: 113%;
-    right: 24%;
-    opacity: 0;
+    top: 97%;
+    left: 4%;
 }
 
 .checkedWordsCount {
