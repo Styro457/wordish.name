@@ -4,12 +4,12 @@ let lastInput = null;
 
 const caret = '_';
 
-document.getElementById("wordsInput").focus();
-
 String.prototype.insert_at=function(index, string)
 {
     return this.substring(0, index) + string + this.substring(index);
 }
+
+document.getElementById("wordsInput").focus();
 
 function startCaret(input) {
     caretTimerID = setInterval(animateCaret, 500, input);
