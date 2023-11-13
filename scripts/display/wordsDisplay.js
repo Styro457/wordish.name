@@ -47,13 +47,14 @@ function displayWord(i) {
     let wordCount = Number(foundWordsCount.textContent);
     foundWordsCount.textContent = String(wordCount + 1);
     if(i < globalWords.length-1)
-        setTimeout(displayWord.bind(null, i + 1), wordCount < 3 ? 200 : 50);
+        setTimeout(displayWord.bind(null, i + 1), wordCount === 0 ? 400 : 50);
     else
         document.getElementById("generateButton").disabled = false;
 }
 
 function displayResults(words) {
     resultsDiv.style.opacity = "100%";
+    resultsDiv.style.top = "87%";
     foundWordsCount.textContent = 0 + "";
     globalWords = words;
     displayWord(0);
