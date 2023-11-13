@@ -8,6 +8,7 @@
     z-index: -1;
     transition: top 0.5s ease-in-out;
     background: #ffffff url("../assets/images/paper_texture.webp");
+    white-space: pre-line;
 }
 
 .resultsSummary {
@@ -16,7 +17,7 @@
 }
 
 .result {
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
     margin-top: 0.5em;
     padding-left: 8%;
     padding-right: 8%;
