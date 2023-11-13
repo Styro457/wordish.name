@@ -12,6 +12,7 @@ async function generateWords(keywordsRaw) {
     let words = []
     let topics
 
+    checkedWordsCount.textContent = undefined;
     // Generate words using different combinations of keywords
     for(let i = 0; i < keywords.length; i++) {
         await getRelatedWords(keywords[i], "ml", null, undefined, undefined, 300, "f:0.00", 4).then(result => {
