@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- wordish.name by Styro457 -->
+<!-- version 0.3.0 -->
+<!-- https://github.com/Styro457/wordish.name -->
 <head>
     <meta charset="UTF-8">
-    <title>Wordish.Name</title>
+    <title>Product Name Generator - Wordish.Name</title>
+
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <!--Icon created by Vector Squad - Flaticon-->
 
     <link rel="stylesheet" href="style/fonts.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/machine.css">
     <link rel="stylesheet" href="style/results.css">
     <link rel="stylesheet" href="style/animations.css">
+
+    <meta name="description" content="Generate memorable and meaningful names for a project, product or anything else using uncommon dictionary words.">
+    <meta name="keywords" content="name generator,namegen,name,title,product name,idea generator,generator,dictionary,words,uncommon words">
+
+    <meta name="author" content="Styro457">
+    <link rel="author" href="https://github.com/Styro457"/>
+
+    <meta property="og:title" content="Product Name Generator - Wordish.Name"/>
+    <meta property="og:description" content="Generate memorable and meaningful names for a project, product or anything else using uncommon dictionary words."/>
+    <meta property="og:url" content="https://wordish.name" />
+    <meta property="og:image"content="https://raw.githubusercontent.com/Styro457/wordish.name/resources/preview.png" />
+    <meta name="theme-color" content="#c97584" data-react-helmet="true" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 </head>
 <body>
     <div class="cover" id="cover"></div>
     <div class="machineHolder">
-        <img class="title unselectable" src="assets/images/title.webp" width="1334" height="173" ondragstart="return false;" alt="Wordish.Name">
+        <img class="title unselectable" src="assets/images/title.webp" width="1334" height="173" ondragstart="return false;" alt="wordish.name | use words as names">
         <div class="machine">
             <div class="results" id="results"><p class="resultsSummary" id="resultsSummary"></p></div>
             <img class="machineBody unselectable" src="assets/images/machineBody.webp" width="1157" height="984" ondragstart="return false;" alt="Machine"
@@ -24,16 +41,11 @@
             <div class="machineUI">
                 <form class="machineForm" action="javascript:onFormSubmit(wordsInput.value, generateButton)">
                     <div class="machineInput">
-                     <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
-                            onfocus="startCaret(this);"
-                            onfocusout="stopCaret(this);"
-                            oninput="caretInput(this);"
-                            ondragenter="stopCaret(this);"
-                            ondragover="stopCaret(this);"
-                            ondragend="startCaret(this);"
-                            ondragstart="stopCaret(this);"
-                            onkeydown="caretMove(this)"
-                            onkeyup="caretMove(this)"
+                        <label for="wordsInput" class="inputLabel lightText">Enter a few related words separated by commas</label>
+                        <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
+                               onfocus="startCaret(this);" onfocusout="stopCaret(this);" oninput="caretInput(this);"
+                               ondragenter="stopCaret(this);" ondragover="stopCaret(this);" ondragend="startCaret(this);"
+                               ondragstart="stopCaret(this);" onkeydown="caretInput(this)" onkeyup="caretInput(this)"
                      >
                     </div>
                     <div class="generateButtonBackground">
@@ -43,11 +55,11 @@
                 <div class="machineScreen machineScreenOn" id="machineScreenOn"></div>
                 <div class="machineScreen">
                     <p class="screenWords scrollBar" id="screenWords"></p>
-                    <p class="checkedWordsCount count" id="checkedWordsCount"></p>
-                    <p class="foundWordsCount count" id="foundWordsCount"></p>
+                    <p class="checkedWords lightText">Checked Words:</p>
+                    <p class="checkedWordsCount lightText" id="checkedWordsCount"></p>
                 </div>
                 <div class="machineLinks unselectable">
-                    <a href="https://github.com/Styro457" target=”_blank”><button class="githubAuthorButton"></button></a>
+                    <a href="https://github.com/Styro457" target=”_blank” rel="author"><button class="githubAuthorButton"></button></a>
                     <a href="https://github.com/Styro457/Wordish.Name" target=”_blank”><button class="githubPageButton"></button></a>
                 </div>
             </div>

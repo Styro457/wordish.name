@@ -39,6 +39,12 @@ body {
     padding-top: 1%;
 }
 
+.lightText {
+    font-size: min(1.5vw, 13px);
+    color: var(--dirty_white);
+    font-family: "OCR-A", "sans-serif";
+}
+
 .unselectable {
     user-drag: none;
     -webkit-user-drag: none;

@@ -4,12 +4,12 @@ let lastInput = null;
 
 const caret = '_';
 
-document.getElementById("wordsInput").focus();
-
 String.prototype.insert_at=function(index, string)
 {
     return this.substring(0, index) + string + this.substring(index);
 }
+
+document.getElementById("wordsInput").focus();
 
 function startCaret(input) {
     caretTimerID = setInterval(animateCaret, 500, input);
@@ -22,39 +22,37 @@ function stopCaret(input) {
     input.value = input.value.replaceAll(caret, "");
 }
 
-function animateCaret(input) {
-    if(input.selectionStart-input.selectionEnd !== 0)
-        return;
-    if(Date.now()-lastInput < 700)
-        return;
-    if(caretAnimation) {
-        const oldSelectionStart = input.selectionStart;
-        const oldSelectionEnd = input.selectionEnd;
-        input.value = input.value.insert_at(input.selectionStart, caret);
-        input.selectionStart = oldSelectionStart;
-        input.selectionEnd = oldSelectionEnd;
-        caretAnimation = !caretAnimation;
-    }
-    else {
-        const oldSelectionStart = input.selectionStart;
-        const oldSelectionEnd = input.selectionEnd;
-        input.value = input.value.replaceAll(caret, "");
-        caretAnimation = !caretAnimation;
-        input.selectionStart = oldSelectionStart;
-        input.selectionEnd = oldSelectionEnd;
-    }
+function caretOn(input) {
+    const oldSelectionStart = input.selectionStart;
+    const oldSelectionEnd = input.selectionEnd;
+    input.value = input.value.insert_at(input.selectionStart, caret);
+    input.selectionStart = oldSelectionStart;
+    input.selectionEnd = oldSelectionEnd;
 }
 
-function caretMove(input) {
+function caretOff(input) {
     const oldSelectionStart = input.selectionStart;
     const oldSelectionEnd = input.selectionEnd;
     input.value = input.value.replaceAll(caret, "");
     input.selectionStart = oldSelectionStart;
     input.selectionEnd = oldSelectionEnd;
-    input.value = input.value.insert_at(input.selectionStart, caret);
-    input.selectionStart = oldSelectionStart;
-    input.selectionEnd = oldSelectionEnd;
-    lastInput = Date.now();
+}
+
+function animateCaret(input) {
+    if(input.selectionStart-input.selectionEnd !== 0 || Date.now()-lastInput < 700)
+        return;
+
+    if(caretAnimation) {
+        if(!input.value.includes(caret))
+            caretOn(input);
+        else
+            caretOff(input);
+        caretAnimation = !caretAnimation;
+    }
+    else {
+        caretOff(input);
+        caretAnimation = !caretAnimation;
+    }
 }
 
 function caretInput(input) {
@@ -65,7 +63,8 @@ function caretInput(input) {
                 caretAnimation = !caretAnimation;
                 return;
             }
-            caretMove(input);
+            caretOff(input);
+            caretOn(input);
             lastInput = Date.now();
         }
     }

@@ -9,6 +9,7 @@
     transition: top 0.5s ease-in-out;
     background: #ffffff url("../assets/images/paper_texture.webp");
     white-space: pre-line;
+    font-size: min(2vw, 15px);
 }
 
 .resultsSummary {
