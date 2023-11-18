@@ -159,7 +159,7 @@ input.PixelatedInput[type=text]:focus {
 .machineLinks {
     position: absolute;
     right: 10%;
-    bottom: 10%;
+    bottom: 9.1%;
     width: 15%;
     height: 5%;
     overflow: hidden;
@@ -168,7 +168,7 @@ input.PixelatedInput[type=text]:focus {
 .githubAuthorButton {
     height: 100%;
     width: 66%;
-    padding-top: 30%;
+    padding-top: 23%;
     background: transparent;
     border: none;
     outline: none;
@@ -179,6 +179,7 @@ input.PixelatedInput[type=text]:focus {
     height: 100%;
     width: 27%;
     padding-top: 30%;
+    margin-left: 4%;
     background: transparent;
     border: none;
     outline: none;
