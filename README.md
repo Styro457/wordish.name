@@ -1,4 +1,6 @@
 # [wordish.name ![](https://github.com/Styro457/Wordish.Name/assets/69657780/c35bbafa-d4fe-4727-9436-5152671480a6)](https://wordish.name/)
+![GitHub release](https://img.shields.io/github/v/release/Styro457/wordish.name?logo=github&color=%2366e385)
+![GitHub License](https://img.shields.io/github/license/Styro457/wordish.name)
 
 **Generate names for anything using uncommon dictionary words.**<br>
 
