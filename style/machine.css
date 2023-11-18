@@ -2,7 +2,7 @@
 .machine {
     position: relative;
     display: block;
-    width: min(900px, 100vw);
+    width: min(1020px, 99vw);
     height: auto;
     margin: 0 auto -10%;
 }
@@ -73,8 +73,8 @@ input.PixelatedInput[type=text]:focus {
     background-size: 100% 100%;
     right:12.7%;
     bottom:14.3%;
-    width: 13.3%;
-    height: 15.6%;
+    width: min(13vw, 130px);
+    height: min(13vw, 130px);
 }
 
 .generateButton {
@@ -82,12 +82,12 @@ input.PixelatedInput[type=text]:focus {
     background: url("../assets/images/button.webp") no-repeat;
     background-origin: content-box;
     background-size: 100% 100%;
-    width: min(82%, 94px);
-    height: 72%;
+    width: min(10.5vw, 105px);
+    height: min(10vw, 105px);
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
     border: none;
-    margin-top: 13%;
-    margin-left: 9.5%;
+    left: 10%;
+    top: 10%;
 }
 
 .generateButton:hover {
