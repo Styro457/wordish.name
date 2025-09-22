@@ -16,9 +16,11 @@ function addResult(word) {
     text.className = "resultWord";
     text.textContent = word.word;
 
-    let frequency = document.createElement("p");
-    frequency.className = "resultFrequency";
-    frequency.textContent = "frequency: " + word.frequency.substring(2);
+    let info = document.createElement("span");
+    info.className = "resultInfo";
+    info.textContent = `frequency: ${word.frequency.substring(2)}
+    appearances: ${word.seen !== undefined ? word.seen : 1}
+    related words: ${word.related !== undefined ? word.related.join(", ") : "N/A"}`;
 
     let description = document.createElement("p");
     description.className = "resultDescription";
@@ -37,7 +39,7 @@ function addResult(word) {
 
     div.appendChild(text);
     text.appendChild(audio);
-    div.appendChild(frequency);
+    div.appendChild(info);
     div.appendChild(description);
 
     resultsDiv.appendChild(div);

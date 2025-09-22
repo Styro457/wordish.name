@@ -21,18 +21,26 @@ function getUniqueWords(words) {
         let k = item.word;
         if(seen.hasOwnProperty(k)) {
             seen[k]["seen"]++;
+            for (let i = 0; i < item["related"].length; i++) {
+                if (!seen[k]["related"].includes(item["related"][i]))
+                    seen[k]["related"].push(item["related"][i]);
+            }
             return false;
         }
         else {
-            seen[k] = item;
             item["seen"] = 1;
+            seen[k] = item;
             return true;
         }
     })
 }
 
+function getWorldValue(a) {
+    return a.seen - (Math.max(a.word.length, 5) * 0.2) - (a.frequency * 0.1);
+}
+
 function compareWords(a, b) {
-    let seenDifference = (b.seen-(b.word.length*0.2)) - (a.seen-(a.word.length*0.2));
+    let seenDifference = getWorldValue(b) - getWorldValue(a);
     if(seenDifference === 0)
         return a.word.length - b.word.length;
     return seenDifference;
@@ -49,32 +57,38 @@ async function generateWords(keywordsRaw) {
     resultsDiv.style = null;
     machineScreenOn.style.opacity = "100%";
 
+    await getRelatedWords(keywords.join(", "), "ml", null,
+        undefined, undefined, 300, "f:0.0", 4)
+        .then(result => words = handleWordResults(result, words, keywords));
+
     // Generate words using different combinations of keywords
     for(let i = 0; i < keywords.length; i++) {
-        await getRelatedWords(keywords[i], "ml", null, undefined, undefined, 300, "f:0.00", 4).then(result => {
-            words = words.concat(result);
-            updateCheckedWordsCount(result.length);
-            addScreenWords(result);
-        })
+        await getRelatedWords(keywords[i], "ml", null,
+            undefined, undefined, 300, "f:0.0", 4)
+            .then(result => words = handleWordResults(result, words, [keywords[i]]));
         for(let j = 0; j < keywords.length; j++) {
             if(i === j)
                 continue;
-            await getRelatedWords(keywords[i] + ", " + keywords[j], "ml", [keywords[j]], undefined, undefined, 300, "f:0.00", 4).then(result => {
-                words = words.concat(result);
-                updateCheckedWordsCount(result.length);
-                addScreenWords(result);
-            })
+            await getRelatedWords(keywords[i], "ml", [keywords[j]],
+                undefined, undefined, 300, "f:0.0", 4)
+                .then(result => words = handleWordResults(result, words, [keywords[i], keywords[j]]));
             for(let k = 0; k < keywords.length; k++) {
                 if(j === k || i === k)
                     continue;
-                await getRelatedWords(keywords[i] + ", " + keywords[j] + ", " + keywords[k], "ml", [keywords[j]], undefined, undefined, 300, "f:0.00", 4).then(result => {
-                    words = words.concat(result);
-                    updateCheckedWordsCount(result.length);
-                    addScreenWords(result);
-                })
+                await getRelatedWords(keywords[i] + ", " + keywords[j], "ml", [keywords[k]],
+                    undefined, undefined, 300, "f:0.0", 4)
+                    .then(result => words = handleWordResults(result, words, [keywords[i], keywords[j], keywords[k]]));
             }
         }
     }
 
     return getUniqueWords(words).sort(compareWords);
+}
+
+function handleWordResults(result, words, relatedWorlds) {
+    for(let word of result)
+        word["related"] = relatedWorlds;
+    updateCheckedWordsCount(result.length);
+    addScreenWords(result);
+    return result;
 }
