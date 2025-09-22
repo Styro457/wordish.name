@@ -18,7 +18,7 @@ The website takes as input a few words or group of words separated by commas and
 
 Using actual words from the dictionary not only ensures that the names will be easy to pronounce, but also adds more depth and meaning to the them.
 
-**🌐 Try it out [wordish.styro.dev](https://wordish.styro.dev)**
+**🌐 Try it out <a href="https://wordish.styro.dev" target="_blank">wordish.styro.dev</a>**
 
 ## Features
 
