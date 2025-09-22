@@ -7,9 +7,11 @@ function updateCheckedWordsCount(amount) {
 }
 
 async function addScreenWords(words) {
+    const isAtBottom = screenWords.scrollTop + screenWords.clientHeight >= screenWords.scrollHeight - 1;
     for(let i = 0; i < words.length; i++) {
         screenWords.textContent += words[i].word + "\r\n";
-        screenWords.scrollTop = screenWords.scrollHeight;
+        if(isAtBottom)
+            screenWords.scrollTop = screenWords.scrollHeight;
     }
 }
 
