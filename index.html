@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- wordish.name by Styro457 -->
-<!-- version 0.3.0 -->
+<!-- version 0.3.1 -->
 <!-- https://github.com/Styro457/wordish.name -->
 <head>
     <meta charset="UTF-8">
@@ -15,41 +15,41 @@
     <link rel="stylesheet" href="style/results.css">
     <link rel="stylesheet" href="style/animations.css">
 
-    <meta name="description" content="Generate memorable and meaningful names for a project, product or anything else using uncommon dictionary words.">
-    <meta name="keywords" content="name generator,namegen,name,title,product name,idea generator,generator,dictionary,words,uncommon words">
+    <meta name="description" content="Generate memorable and meaningful names for free for a side project, product, github repo, start-up or anything else using dictionary words.">
+    <meta name="keywords" content="project name generator,project name,product name,name ideas,start-up name,name generator for projects">
 
     <meta name="author" content="Styro457">
     <link rel="author" href="https://github.com/Styro457"/>
 
-    <meta property="og:title" content="Product Name Generator - Wordish.Name"/>
+    <meta property="og:title" content="Project Name Generator - Wordish.Name"/>
     <meta property="og:description" content="Generate memorable and meaningful names for a project, product or anything else using uncommon dictionary words."/>
     <meta property="og:url" content="https://wordish.name" />
-    <meta property="og:image"content="https://raw.githubusercontent.com/Styro457/wordish.name/resources/preview.png" />
-    <meta name="theme-color" content="#c97584" data-react-helmet="true" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Styro457/wordish.name/resources/preview.png"/>
+    <meta name="theme-color" content="#c97584" data-react-helmet="true"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
 <body>
     <div class="cover" id="cover"></div>
     <div class="machineHolder">
-        <img class="title unselectable" src="assets/images/title.webp" width="1334" height="173" ondragstart="return false;" alt="wordish.name | use words as names">
+        <img class="title unselectable" src="assets/images/title.webp" ondragstart="return false;" alt="wordish.name | use words as names">
         <div class="machine">
             <div class="results" id="results"><p class="resultsSummary" id="resultsSummary"></p></div>
-            <img class="machineBody unselectable" src="assets/images/machineBody.webp" width="1157" height="984" ondragstart="return false;" alt="Machine"
+            <img class="machineBody unselectable" src="assets/images/machineBody.webp" ondragstart="return false;" alt="Machine"
                  onload="document.getElementById('cover').classList.add('fadeOut');">
             <div class="machineUI">
                 <form class="machineForm" action="javascript:onFormSubmit(wordsInput.value, generateButton)">
                     <div class="machineInput">
                         <label for="wordsInput" class="inputLabel lightText">Enter a few related words separated by commas</label>
-                        <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" required
+                        <input type="text" id="wordsInput" name="wordsInput" class="PixelatedInput" title="Enter related words" required
                                onfocus="startCaret(this);" onfocusout="stopCaret(this);" oninput="caretInput(this);"
                                ondragenter="stopCaret(this);" ondragover="stopCaret(this);" ondragend="startCaret(this);"
                                ondragstart="stopCaret(this);" onkeydown="caretInput(this)" onkeyup="caretInput(this)"
                      >
                     </div>
                     <div class="generateButtonBackground">
-                        <input type="submit" class="generateButton" name="generateButton" id="generateButton" value="">
+                        <input type="submit" class="generateButton" name="generateButton" id="generateButton" value="Generate">
                     </div>
                 </form >
                 <div class="machineScreen machineScreenOn" id="machineScreenOn"></div>
@@ -59,8 +59,8 @@
                     <p class="checkedWordsCount lightText" id="checkedWordsCount"></p>
                 </div>
                 <div class="machineLinks unselectable">
-                    <a href="https://github.com/Styro457" target=”_blank” rel="author"><button class="githubAuthorButton"></button></a>
-                    <a href="https://github.com/Styro457/Wordish.Name" target=”_blank”><button class="githubPageButton"></button></a>
+                    <a href="https://github.com/Styro457" target=”_blank” rel="author"><button class="githubAuthorButton" name="Author Link" title="Author"></button></a>
+                    <a href="https://github.com/Styro457/Wordish.Name" target=”_blank”><button class="githubPageButton" name="Github Page" title="Github Page"></button></a>
                 </div>
             </div>
         </div>
